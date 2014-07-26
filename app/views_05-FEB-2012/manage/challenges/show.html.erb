@@ -1,0 +1,135 @@
+<% @page_title = "manage : challenges : show : #{@challenge.name}" %>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Show Challenge</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <div>
+          <div class="list_label">Name:</div>
+          <div class="list_text"><%= @challenge.name %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Description:</div>
+          <div class="list_text"><%= @challenge.description %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Start Date:</div>
+          <div class="list_text"><%= @challenge.start_date.strftime("%m/%d/%Y") %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">End Date:</div>
+          <div class="list_text"><%= @challenge.end_date.strftime("%m/%d/%Y") %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Total Offer:</div>
+          <div class="list_text"><%= number_to_currency(@challenge.total_offer) %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Amount Raised:</div>
+          <div class="list_text"><%= number_to_currency(@challenge.amount_raised) %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Charity Blurb:</div>
+          <div class="list_text"><%= @challenge.charity_blurb %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Sponsor Blurb:</div>
+          <div class="list_text"><%= @challenge.sponsor_blurb %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Challenge Img:</div>
+          <div class="list_text"><img src="<%= @challenge.challenge_img %>"/></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Thumbnail Img:</div>
+          <div class="list_text"><img src="<%= @challenge.img_thumb_url %>"/></div>
+        </div>
+        <% if @challenge.img_thumb_url.nil? %>
+            <br/>
+        <% else %>
+            <br/><br/><br/><br/><br/>
+        <% end %>
+
+        <div>
+          <div class="list_label">Charities:</div>
+          <div class="list_text">
+            <% @challenge.charities.each_with_index do |charity, index| %>
+                <%= charity.name %><%= if index < @challenge.charities.length - 1 then
+                                           ", "
+                                       end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Sponsors:</div>
+          <div class="list_text">
+            <% @challenge.sponsors.each_with_index do |sponsor, index| %>
+                <%= sponsor.name %><%= if index < @challenge.sponsors.length - 1 then
+                                           ", "
+                                       end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Activities:</div>
+          <div class="list_text">
+            <% @challenge.activities.each_with_index do |activity, index| %>
+                <%= activity.name %><%= if index < @challenge.activities.length - 1 then
+                                            ", "
+                                        end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Tags:</div>
+          <div class="list_text">
+            <% @challenge.tags.each_with_index do |tag, index| %>
+                <%= tag.name %><%= if index < @challenge.tags.length - 1 then
+                                       ", "
+                                   end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Created By:</div>
+          <div class="list_text"><%= @challenge.user.email %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Active:</div>
+          <div class="list_text"><%= @challenge.enabled ? "yes" : "no" %></div>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<%= link_to "Edit Challenge", :controller => "challenges", :action => "edit", :id => @challenge.id %>

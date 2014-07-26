@@ -1,0 +1,154 @@
+<% @page_title = "challenges : list" %>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Challenges List</div>
+  <div>
+    Sort:
+    <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "asc" then %>
+        A-Z |
+    <% else %>
+        <%= link_to "A-Z", :controller => "challenges", :action => "index", :sort => "alpha", :asc => "asc" %> |
+    <% end %>
+    <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "desc" then %>
+        Z-A |
+    <% else %>
+        <%= link_to "Z-A", :controller => "challenges", :action => "index", :sort => "alpha", :asc => "desc" %> |
+    <% end %>
+
+    <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "asc" then %>
+        New |
+    <% else %>
+        <%= link_to "New", :controller => "challenges", :action => "index", :sort => "date", :asc => "asc" %> |
+    <% end %>
+    <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "desc" then %>
+        Old |
+    <% else %>
+        <%= link_to "Old", :controller => "challenges", :action => "index", :sort => "date", :asc => "desc" %> |
+    <% end %>
+
+    <% if !params[:sort].nil? && params[:sort] == "offer" && !params[:asc].nil? && params[:asc] == "desc" then %>
+        Offer Highest |
+    <% else %>
+        <%= link_to "Offer Highest", :controller => "challenges", :action => "index", :sort => "offer", :asc => "desc" %>
+        |
+    <% end %>
+    <% if !params[:sort].nil? && params[:sort] == "offer" && !params[:asc].nil? && params[:asc] == "asc" then %>
+        Offer Lowest |
+    <% else %>
+        <%= link_to "Offer Lowest", :controller => "challenges", :action => "index", :sort => "offer", :asc => "asc" %>
+        |
+    <% end %>
+
+    <% if !params[:sort].nil? && params[:sort] == "raised" && !params[:asc].nil? && params[:asc] == "desc" then %>
+        Raised Highest |
+    <% else %>
+        <%= link_to "Raised Highest", :controller => "challenges", :action => "index", :sort => "raised", :asc => "desc" %>
+        |
+    <% end %>
+    <% if !params[:sort].nil? && params[:sort] == "raised" && !params[:asc].nil? && params[:asc] == "asc" then %>
+        Raised Lowest |
+    <% else %>
+        <%= link_to "Raised Lowest", :controller => "challenges", :action => "index", :sort => "raised", :asc => "asc" %>
+        |
+    <% end %>
+
+    <% if !params[:sort].nil? && params[:sort] == "activity" && !params[:asc].nil? && params[:asc] == "desc" then %>
+        Activity New |
+    <% else %>
+        <%= link_to "Activity New", :controller => "challenges", :action => "index", :sort => "activity", :asc => "desc" %>
+        |
+    <% end %>
+    <% if !params[:sort].nil? && params[:sort] == "activity" && !params[:asc].nil? && params[:asc] == "asc" then %>
+        Activity Old
+    <% else %>
+        <%= link_to "Activity Old", :controller => "challenges", :action => "index", :sort => "activity", :asc => "asc" %>
+    <% end %>
+  </div>
+</div>
+
+<!--<div class="contentpaneopen">
+    <div class="contentheading">
+        <% form_tag url_for_options = {:controller => "/search", :action => "challenges"}, :method => :get do %>
+    <%= text_field_tag "keyword", nil, :class => "text_field", :size => 30, :maxlength => 50 %><%= submit_tag "challenge search" %>
+<% end %>
+    </div>
+</div>-->
+
+<div class="contentpaneopen">
+  <% @challenges.each_with_index do |challenge, index| %>
+      <div class="list_table">
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Name:</div>
+        <div class="list_table_cell_right"><b><%= challenge.name %></b></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Start Date:</div>
+        <div class="list_table_cell_right"><%= challenge.start_date.strftime("%m/%d/%Y") %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">End Date:</div>
+        <div class="list_table_cell_right"><%= challenge.end_date.strftime("%m/%d/%Y") %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Total Offer:</div>
+        <div class="list_table_cell_right"><%= number_to_currency(challenge.total_offer) %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Amount Raised:</div>
+        <div class="list_table_cell_right"><%= number_to_currency(challenge.amount_raised) %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Charities:</div>
+        <div class="list_table_cell_right">
+          <% challenge.charities.each_with_index do |charity, index| %>
+              <%= charity.name %><%= if index < challenge.charities.length - 1 then
+                                         ", "
+                                     end %>
+          <% end %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Sponsors:</div>
+        <div class="list_table_cell_right">
+          <% challenge.sponsors.each_with_index do |sponsor, index| %>
+              <%= sponsor.name %><%= if index < challenge.sponsors.length - 1 then
+                                         ", "
+                                     end %>
+          <% end %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Activities:</div>
+        <div class="list_table_cell_right">
+          <% challenge.activities.each_with_index do |activity, index| %>
+              <%= activity.name %><%= if index < challenge.activities.length - 1 then
+                                          ", "
+                                      end %>
+          <% end %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Tags:</div>
+        <div class="list_table_cell_right">
+          <% challenge.tags.each_with_index do |tag, index| %>
+              <%= tag.name %><%= if index < challenge.tags.length - 1 then
+                                     ", "
+                                 end %>
+          <% end %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Active:</div>
+        <div class="list_table_cell_right"><%= challenge.enabled ? "yes" : "no" %></div>
+      </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Actions:</div>
+        <div class="list_table_cell_right">
+          <%= link_to "Show", :controller => "challenges", :action => "show", :id => challenge.seo_name %>
+          <% if challenge.user.id.to_s == session[:user_id].to_s then %>
+              | <%= link_to "Edit", :controller => "challenges", :action => "edit", :id => challenge.seo_name %>
+          <% end %>
+        </div>
+      </div>
+      </div>
+      <% if index < @challenges.length - 1 %>
+          <hr class="divider"/>
+          <% end %>
+  <% end %>
+</div><br/>

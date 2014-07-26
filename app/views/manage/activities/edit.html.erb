@@ -1,0 +1,39 @@
+<% @page_title = "manage : activities : edit : #{@activity.name}" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Edit Activity</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <% form_for :activity, @activity, :url => { :action => "update" }, :html => { :method => :put, :multipart => true } do |f| %>
+                    <%= f.error_messages %>
+                    <fieldset>
+                        <%= f.label :name, "Name: " %>
+                        <%= f.text_field :name, :class => "text_field", :size => 30, :maxlength => 50 %>
+                    </fieldset>
+                    <fieldset>
+                        <%= f.label :description, "Description: " %>
+                        <%= f.text_field :description, :class => "text_field", :size => 30, :maxlength => 100 %>
+                    </fieldset>
+                  <fieldset>
+                    <%= f.label :amt, "Amount: " %>
+                    <%= f.text_field :amt, :class => "text_field", :size => 6, :maxlength => 6 %>
+                  </fieldset>
+                    <fieldset>
+                        <%= f.label :enabled, "Active: " %>
+                        <%= f.check_box :enabled, {}, "true", "false" %>
+                    </fieldset>
+                    <fieldset>
+                        <label>&nbsp;</label>
+                        <%= f.submit "Update" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Show Activity", [:manage, @activity] %>

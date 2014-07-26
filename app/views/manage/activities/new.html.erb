@@ -1,0 +1,38 @@
+<% @page_title = "manage : activities : new" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">New Activity</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <% form_for :activity, @activity, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
+                    <%= f.error_messages %>
+                    <%= f.hidden_field :created_by_user_id, :value => "#{session[:user_id]}" %>
+                    <fieldset>
+                        <%= f.label :name, "Name: " %>
+                        <%= f.text_field :name, :class => "text_field", :size => 30, :maxlength => 50 %>
+                    </fieldset>
+                    <fieldset>
+                        <%= f.label :description, "Description: " %>
+                        <%= f.text_field :description, :class => "text_field", :size => 30, :maxlength => 100 %>
+                    </fieldset>
+                  <fieldset>
+                    <%= f.label :amt, "Amount: " %>
+                    <%= f.text_field :amt, :class => "text_field", :size => 6, :maxlength => 6 %>
+                  </fieldset>
+                    <fieldset>
+                        <%= f.label :enabled, "Active: " %>
+                        <%= f.check_box :enabled %>
+                    </fieldset>
+                    <fieldset>
+                        <label>&nbsp;</label>
+                        <%= f.submit "Create" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div><br />

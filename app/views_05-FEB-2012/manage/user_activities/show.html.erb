@@ -1,0 +1,30 @@
+<% @page_title = "manage : user activities : show" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Show User Activity</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <div>
+                    <div class="list_label">User: </div>
+                    <div class="list_text"><%= @user_activity.user.email %></div>
+                </div><br />
+                <div>
+                    <div class="list_label">Activity: </div>
+                    <div class="list_text"><%= @user_activity.challenge_activity.activity.name %></div>
+                </div><br />
+                <div>
+                    <div class="list_label">Activity Data: </div>
+                    <div class="list_text"><% @user_activity.activity_data.each_with_index do |data, index| %>
+                        <%= data %><%= if index < @user_activity.activity_data.length - 1 then "<br />" end %>
+                    <% end %></div>
+                </div><br />
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Edit User Activity", edit_manage_user_activity_path(@user_activity) %>

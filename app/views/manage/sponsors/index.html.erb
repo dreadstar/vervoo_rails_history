@@ -1,0 +1,93 @@
+<% @page_title = "manage : sponsors : list" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Sponsors List</div>
+    <div>
+        Sort:
+        <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "asc" then %>
+            A-Z |
+        <% else %>
+            <%= link_to "A-Z", :controller => "sponsors", :action => "index", :sort => "alpha", :asc => "asc" %> |
+        <% end %>
+        <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "desc" then %>
+            Z-A |
+        <% else %>
+            <%= link_to "Z-A", :controller => "sponsors", :action => "index", :sort => "alpha", :asc => "desc" %> |
+        <% end %>
+
+        <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "asc" then %>
+            New-Old |
+        <% else %>
+            <%= link_to "New-Old", :controller => "sponsors", :action => "index", :sort => "date", :asc => "asc" %> |
+        <% end %>
+        <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "desc" then %>
+            Old-New
+        <% else %>
+            <%= link_to "Old-New", :controller => "sponsors", :action => "index", :sort => "date", :asc => "desc" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="contentheading">
+        <% form_tag url_for_options = {:controller => "/manage/search", :action => "sponsors"}, :method => :get do %>
+            <%= text_field_tag "keyword", nil, :class => "text_field", :size => 30, :maxlength => 50 %><%= submit_tag "sponsor search" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <% @sponsors.each_with_index do |sponsor, index| %><div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Name: </div>
+            <div class="list_table_cell_right"><b><%=sponsor.name%></b></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Contact E-mail: </div>
+            <div class="list_table_cell_right"><%=sponsor.email%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Website: </div>
+            <div class="list_table_cell_right"><%=sponsor.website%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Tags: </div>
+            <div class="list_table_cell_right"><% sponsor.tags.each_with_index do |tag, index| %>
+                <%= tag.name %><%= if index < sponsor.tags.length - 1 then ", " end %>
+            <% end %></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Active: </div>
+            <div class="list_table_cell_right"><%=sponsor.enabled ? "yes" : "no" %></div>
+        </div>
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Image URL:</div>
+        <% if sponsor.image_url.nil? %>
+            "No image"
+        <% else %>
+            <div class="list_table_cell_right"><img src="<%= sponsor.image_url %>"/></div>
+            <br/><br/><br/><br/><br/>
+        <% end %>
+      </div>
+
+      <div class="list_table_row">
+        <div class="list_table_cell_left">Thumbnail URL:</div>
+        <% if sponsor.img_thumb_url.nil? %>
+            "No image"
+        <% else %>
+            <div class="list_table_cell_right"><img src="<%= sponsor.img_thumb_url %>"/></div>
+            <br/>
+        <% end %>
+      </div>
+
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Actions: </div>
+            <div class="list_table_cell_right">
+                <%= link_to "Show", :controller => "sponsors", :action => "show", :id => sponsor.id %> |
+                <%= link_to "Edit", :controller => "sponsors", :action => "edit", :id => sponsor.id %> |
+                <%= link_to "Delete", :controller => "sponsors", :action => "delete", :id => sponsor.id, :confirm => "Are you sure?", :method => :delete %>
+            </div>
+        </div>
+    </div>
+    <% if index < @sponsors.length - 1 %><hr class="divider" /><% end %><% end %>
+</div><br />

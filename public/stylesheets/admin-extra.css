@@ -1,0 +1,58 @@
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 100%;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+h2 {
+    font-size: 250%;
+}
+
+h3 {
+    font-size: 200%;
+}
+
+h4 {
+    font-size: 175%;
+}
+
+h5 {
+    font-size: 150%;
+}
+
+h6 {
+    font-size: 125%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-weight: normal;
+    color: #7887A0;
+}
+
+h2 {
+    color: #b4b4be;
+}
+
+h3 {
+    color: #646478;
+}
+
+h4 {
+    font-weight: normal;
+    color: #7887A0;
+}
+
+h5 {
+    color: #878796;
+}
+
+h6 {
+    color: #7887A0;
+}

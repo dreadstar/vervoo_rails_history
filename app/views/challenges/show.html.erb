@@ -1,0 +1,178 @@
+<% @page_title = "challenges : show : #{@challenge.name}" %>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Show Challenge</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <div>
+          <div class="list_label">Name:</div>
+          <div class="list_text"><%= @challenge.name %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Description:</div>
+          <div class="list_text"><%= @challenge.description %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Start Date:</div>
+          <div class="list_text"><%= @challenge.start_date.strftime("%m/%d/%Y") %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">End Date:</div>
+          <div class="list_text"><%= @challenge.end_date.strftime("%m/%d/%Y") %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Total Offer:</div>
+          <div class="list_text"><%= number_to_currency(@challenge.total_offer) %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Amount Raised:</div>
+          <div class="list_text"><%= number_to_currency(@challenge.amount_raised) %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Charity Blurb:</div>
+          <div class="list_text"><%= @challenge.charity_blurb %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Sponsor Blurb:</div>
+          <div class="list_text"><%= @challenge.sponsor_blurb %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Challenge Img:</div>
+          <div class="list_text"><img src="<%= @challenge.challenge_img %>"/></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Thumbnail Img:</div>
+          <div class="list_text"><img src="<%= @challenge.img_thumb_url %>"/></div>
+        </div>
+        <div><br/>
+
+          <div class="list_label">Charities:</div>
+          <div class="list_text">
+            <% @challenge.charities.each_with_index do |charity, index| %>
+                <%= charity.name %><%= if index < @challenge.charities.length - 1 then
+                                           ", "
+                                       end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Sponsors:</div>
+          <div class="list_text">
+            <% @challenge.sponsors.each_with_index do |sponsor, index| %>
+                <%= sponsor.name %><%= if index < @challenge.sponsors.length - 1 then
+                                           ", "
+                                       end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Activities:</div>
+          <div class="list_text">
+            <% @challenge.activities.each_with_index do |activity, index| %>
+                <%= activity.name %><%= if index < @challenge.activities.length - 1 then
+                                            ", "
+                                        end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Tags:</div>
+          <div class="list_text">
+            <% @challenge.tags.each_with_index do |tag, index| %>
+                <%= tag.name %><%= if index < @challenge.tags.length - 1 then
+                                       ", "
+                                   end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Users:</div>
+          <div class="list_text">
+            <% @challenge.users.each_with_index do |user, index| %>
+                <%= user.first_name %><%= if index < @challenge.users.length - 1 then
+                                              ", "
+                                          end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Created By:</div>
+          <div class="list_text"><%= @challenge.user.email %></div>
+        </div>
+        <br/>
+        <% if session[:user_id].nil? then %>
+            <div id="challenge_member_<%= @challenge.id %>">
+              <div class="list_label">&nbsp;</div>
+              <div class="list_text">
+                <%= link_to "Login to Participate", :controller => "session", :action => "index" %>
+              </div>
+            </div>
+            <br/>
+        <% elsif !session[:user_id].nil? && @challenge.user_ids.include?(session[:user_id]) then %>
+            <div id="challenge_member_<%= @challenge.id %>">
+              <div class="list_label">Your activity:</div>
+              <div class="list_text">
+                <% @user_activities.each_with_index do |ua, index| %>
+                    <%= ua.created_at.strftime("%m/%d/%Y") %>
+                    <br/>
+                    <% if !ua.activity_data.nil? %>
+                        <% ua.activity_data.each_key do |data_key| %>
+                            <%= data_key %>: <%= ua.activity_data[data_key] %>
+                            <br/>
+                        <% end %>
+                        <%= if index < @user_activities.length - 1 then
+                                "<br /> "
+                            end %>
+                    <% end %>
+                <% end %>
+              </div>
+            </div>
+            <br/>
+        <% else %>
+            <div id="challenge_member_<%= @challenge.id %>">
+              <div class="list_label">&nbsp;</div>
+              <div class="list_text">
+                <% remote_form_for :challenge_user, @challenge_user, :url => {:controller => "challenge_users", :id => @challenge_user}, :update => "challenge_member_#{@challenge.id}" do |f| %>
+                    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+                    <%= f.hidden_field :challenge_id, :value => @challenge.id %>
+                    <%= f.submit "Participate in this Challenge", :class => "button" %>
+                <% end %>
+              </div>
+            </div>
+            <br/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<% if @challenge.user.id.to_s == session[:user_id].to_s then %>
+    <%= link_to "Edit Challenge", :controller => "challenges", :action => "edit", :id => @challenge.seo_name %>
+<% end %>

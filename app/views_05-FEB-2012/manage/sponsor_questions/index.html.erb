@@ -1,0 +1,18 @@
+<h1>Listing sponsor_questions</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @sponsor_questions.each do |sponsor_question| %>
+  <tr>
+    <td><%= link_to 'Show', sponsor_question %></td>
+    <td><%= link_to 'Edit', edit_sponsor_question_path(sponsor_question) %></td>
+    <td><%= link_to 'Destroy', sponsor_question, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sponsor_question', new_sponsor_question_path %>

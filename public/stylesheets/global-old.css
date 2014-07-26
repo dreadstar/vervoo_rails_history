@@ -1,0 +1,446 @@
+
+/* ################ HTMl Elements ################ */
+html, body {
+    /*font-size: 16px;*/
+    color: #000000;
+}
+
+body {
+    text-align: center;
+}
+
+* html {
+    display: inline;
+    margin-bottom: 5px;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    margin: 0px;
+    padding: 0px;
+}
+
+option {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+fieldset {
+    border: 0px;
+    text-align: left;
+}
+
+label {
+    float: left;
+    clear: left;
+    display: block;
+    padding-top: 3px;
+    padding-right: 5px;
+    text-align: right;
+    font-weight: bold;
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+
+
+/* ################ General ################ */
+.h1_text {
+    font-size: 155.5%;
+    font-weight: bold;
+}
+.h2_text {
+    font-size: 138.5%;
+    font-weight: bold;
+}
+.form_form {
+    margin: 0px;
+}
+.user_form {
+    background-color: #C8E8C0;
+    padding: 20px;
+}
+.text_field, select {
+    border: 1px solid #362f36;
+    font-size: 14px;
+    color: #888484;
+    text-align: left;
+    height: 20px;
+    width: auto;
+    margin: 0px;
+}
+.button {
+    border: 1px solid #362f36;
+    background: #289520;
+    color: #FFFFFF;
+    margin: 0px;
+    padding: 5px;
+}
+
+
+/* ################ Wrapper ################ */
+#wrapper {
+    margin: 0px auto -1px auto;
+    position: relative;
+    width: 960px;
+    /*position: fixed;*/
+    /*left: 50%;
+    margin-left: -480px;*/
+}
+
+
+/* ################ Header ################ */
+#header {
+    position: relative;
+    width: 960px;
+    /*height: 183px;*/
+    background: url(/images/demo/header_background.png) repeat-x;
+    /*background: url(/images/navigation/black_to_gray_header_bg.png) repeat-x;*/
+    /*background: url(/images/navigation/black_repeat_pixel.png);*/
+    /*background-color: #333333;*/
+    float: left;
+    text-align: left;
+}
+#header #logo_whole {
+    position: relative;
+    float: left;
+    top: 0px;
+    left: 10px;
+}
+#header #logo_demo {
+    position: relative;
+    float: left;
+    text-align: left;
+}
+#header #header_graphic {
+    position: relative;
+    width: 602px;
+    float: left;
+}
+#header #logo_v {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 25px;
+}
+#header #logo_text {
+    float: left;
+    position: relative;
+    top: 25px;
+    left: 30px;
+}
+/*#header_text {
+    float: left;
+    position: relative;
+    top: 60px;
+    left: -110px;
+    font-family: arial;
+    font-size: 10px;
+    color: #FFFFFF;
+}*/
+#header #menu {
+    float: left;
+    position: relative;
+    top: 26px;
+    left: 270px;
+    height: 30px;
+    display: block;
+    text-align: right;
+}
+#header #menu li{
+    float: left;
+    display: inline;
+    height: 20px;
+    padding: 0px 5px 0px 5px;
+    margin: 5px 0px 5px 5px;
+    color: #FFFFFF;
+}
+#header #nav_search {
+    float: left;
+    position: relative;
+    top: 28px;
+    left: 320px;
+}
+
+
+/* ################ Content ################ */
+#content {
+    position: relative;
+    width: 960px;
+    /*height: 408px;*/
+    background-color: #99CC66;
+    text-align: center;
+    background: url(/images/demo/green_to_white_bg_beta.png) repeat-x;
+    float: left;
+}
+
+
+/* ################ Footer ################ */
+#footer {
+    position: relative;
+    width: 960px;
+    height: 49px;
+    text-align: center;
+    /*background: url(/images/demo/footer_beta.png) repeat-x;*/
+    background: url(/images/demo/reflection_footer.png);
+    float: left;
+}
+#footer #connect {
+    position: relative;
+    top: 12px;
+    width: 300px;
+    float: left;
+    color: #FFFFFF;
+    padding-left: 20px;
+    text-align: left;
+}
+#footer #connect #c_text {
+    position: relative;
+    top: -5px;
+}
+#footer #connect #icons {
+    padding-left: 10px;
+    vertical-align: middle;
+}
+#footer #copyright {
+    position: relative;
+    top: 15px;
+    width: 200px;
+    float: right;
+    color: #FFFFFF;
+    padding-right: 20px;
+}
+
+
+/* ################ Homepage beta ################ */
+#homepage_beta {
+    position: relative;
+}
+#homepage_beta_left {
+    width: 351px;
+    float: left;
+}
+#homepage_beta_right {
+    width: 605px;
+    float: left;
+}
+/*#reflection {
+    margin-top: -140px;
+    z-index: 50;
+}*/
+#reflection_main {
+    position: relative;
+    left: 6px;
+}
+
+
+/* ################ Get Info ################ */
+#get_info_form {
+    margin: 0px auto -1px auto;
+    float: left;
+    padding: 0px 10px 0px 10px;
+}
+#get_info_header {
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+}
+#get_info_text {
+    padding: 0px 10px 10px 10px;
+    text-align: justify;
+}
+#get_info_form .input_center {
+    padding-left: 33px;
+    text-align: left;
+}
+#get_info_form .errorExplanation {
+    margin-top: -10px;
+}
+
+
+/* ################ User ################ */
+#user_login {
+    text-align: center;
+    float: right;
+    width: 305px;
+}
+#user_login label {
+    text-align: right;
+    width: 70px;
+}
+#user_login .button {
+    float: left;
+    text-align: left;
+}
+
+#user_sign_up {
+    text-align: center;
+    float: right;
+    width: 310px;
+}
+#user_sign_up label {
+    text-align: right;
+    width: 80px;
+}
+#user_sign_up .button {
+    float: left;
+    text-align: left;
+}
+
+#user_display {
+    text-align: center;
+    float: right;
+    width: 510px;
+}
+#user_display label {
+    text-align: right;
+    width: 120px;
+    padding-top: 0px;
+}
+
+#user_update {
+    text-align: center;
+    float: right;
+    width: 510px;
+}
+#user_update label {
+    text-align: right;
+    width: 120px;
+}
+#user_update .button {
+    float: left;
+    text-align: left;
+}
+
+
+/* ################ Floater ################ */
+#floater_wrapper {
+    /*margin: 0px auto -1px auto;*/
+    display: none;
+    position: fixed;
+    top: 190px;
+    z-index: 2;
+    width: 960px;
+    left: 50%;
+    margin-left: -480px;
+}
+#floater_with_bg {
+    margin: 0px auto -1px auto;
+    width: 495px;
+    height: 290px;
+    background: url(/images/floater/floater_bg_initial.png) no-repeat;
+}
+#floater_replace {
+    padding: 20px;
+    text-align: left;
+}
+#floater_border {
+    margin: 0px auto -1px auto;
+    width: 495px;
+    height: 270px;
+    padding: 10px;
+    background-color: #362f36;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    filter:alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+#floater_box {
+    margin: 0px auto -1px auto;
+    width: 475px;
+    height: 250px;
+    position: relative;
+    top: -280px;
+    padding: 10px;
+    color: #000000;
+    text-align: left;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background: -webkit-gradient(linear, left top, left bottom,
+                                 color-stop(0.0,#ACD382), color-stop(0.2,#C7E1AC),
+                                 color-stop(0.4,#EBF4E3), color-stop(0.6,#EBF4E3),
+                                 color-stop(0.8,#EBF4E3), color-stop(1.0,#FFFFFF));
+    background: -moz-linear-gradient(top, #ACD382, #C7E1AC, #EBF4E3, #EBF4E3, #EBF4E3, #FFFFFF);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#FFEBF4E3, endColorstr=#FFFFFFFF);
+    background-color: #FFFFCC;
+}
+#floater_header {
+    margin: 0px auto -1px auto;
+    float: left;
+    position: relative;
+    padding: 0px 10px 10px 10px;
+}
+#floater_close {
+    float: right;
+}
+#floater_close #close_button {
+    vertical-align: middle;
+}
+#floater_form {
+    margin: 0px auto -1px auto;
+    float: left;
+    padding: 0px 10px 0px 10px;
+}
+#floater_form .input_left {
+    float: left;
+	width: 200px;
+}
+#floater_form .input_right {
+    float: right;
+	width: 200px;
+}
+#floater_form .input_right .button {
+    float: right;
+    padding: 5px;
+}
+#floater_text {
+    float: left;
+    padding: 0px 10px 10px 10px;
+}
+#floater_form .input_left .h2_text {
+    position: relative;
+    top: 15px;
+}
+
+.errorExplanation {
+}
+.errorExplanation h2 {
+    visibility: hidden;
+    display: none;
+}
+.errorExplanation p {
+    visibility: hidden;
+    display: none;
+}
+.errorExplanation ul {
+    padding-left: 50px;
+    padding-bottom: 10px;
+    color: #FF0000;
+}
+

@@ -1,0 +1,41 @@
+<% @page_title = "get info" %>
+
+<div id="homepage_beta_left">
+    <div id="get_info_header">
+        <span class="h1_text">Get Info</span>
+    </div>
+    <div id="get_info_text">
+        <p>vervue is getting ready to launch! Sign up early to get the inside
+        news about the vervue social revolution and learn more abut how to
+        raise real money for your favorite causes!</p>
+    </div>
+    <div id="get_info_form">
+        <% form_for :newsletter_subscriber, @newsletter_subscriber, :url => { :controller => "get_info", :action => "create" } do |f| %>
+            <%= f.hidden_field :subscriber_type, :value => "user" %>
+            <%= f.error_messages %>
+            <fieldset class="input_center">
+                <%= f.text_field :first_name, :class => "text_field", :size => 30, :maxlength => 50 %><br />
+                First Name
+            </fieldset>
+            <fieldset class="input_center">
+                <%= f.text_field :last_name, :class => "text_field", :size => 30, :maxlength => 50 %><br />
+                Last Name
+            </fieldset>
+            <fieldset class="input_center">
+                <%= f.text_field :email, :class => "text_field", :size => 30, :maxlength => 100 %><br />
+                E-mail
+            </fieldset>
+            <fieldset class="input_center">
+                <%= f.text_field :postal_code, :class => "text_field", :size => 30, :maxlength => 10 %><br />
+                Zip/Postal Code
+            </fieldset>
+            <fieldset class="input_center">
+                <%= f.submit "sign up", :class => "button" %>
+            </fieldset>
+        <% end %>
+    </div>
+</div>
+
+<div id="homepage_beta_right">
+    <%= image_tag "http://images.vervoo.com/images/demo/reflection_main_w_bg.png", :id => "reflection_main", :alt => "" %>
+</div>

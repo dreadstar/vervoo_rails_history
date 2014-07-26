@@ -1,0 +1,28 @@
+    <!--<div id="floater_border"></div>
+    <div id="floater_box">
+        <%= render :partial => "index/floater" %>
+    </div>-->
+
+                <% if !session[:user_id].nil? && @challenge.challenge_user_ids.include?(session[:user_id]) %>
+                    <div id="challenge_member_<%=@challenge.id%>">
+                        <div class="list_label">&nbsp;</div>
+                        <div class="list_text">
+                            <% remote_form_for :challenge_user, @challenge_user, :url => { :controller => "challenge_users", :id => @challenge_user }, :update => "challenge_#{@challenge.id}" do |f| %>
+                                <%= f.hidden_field :user_id, :value => session[:user_id] %>
+                                <%= f.hidden_field :challenge_id, :value => @challenge.id %>
+                                <%= f.submit "Unjoin This Challenge", :class => "button" %>
+                            <% end %>
+                        </div>
+                    </div><br />
+                <% else %>
+                    <div id="challenge_member_<%=@challenge.id%>">
+                        <div class="list_label">&nbsp;</div>
+                        <div class="list_text">
+                            <% remote_form_for :challenge_user, @challenge_user, :url => { :controller => "challenge_users", :id => @challenge_user }, :update => "challenge_member_#{@challenge.id}" do |f| %>
+                                <%= f.hidden_field :user_id, :value => session[:user_id] %>
+                                <%= f.hidden_field :challenge_id, :value => @challenge.id %>
+                                <%= f.submit "Join This Challenge", :class => "button" %>
+                            <% end %>
+                        </div>
+                    </div><br />
+                <% end %>

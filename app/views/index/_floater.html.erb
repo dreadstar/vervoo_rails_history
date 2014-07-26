@@ -1,0 +1,52 @@
+
+        <div id="floater_replace">
+            <div>
+                <div id="floater_header">
+                    <span class="h1_text">Get Info</span>
+                </div>
+                <div id="floater_close">
+                    <%=link_to_function image_tag("http://images.vervoo.com/images/icons/rounded_x.png", :id => "close_button", :alt => "Close"), "$('floater_wrapper').setStyle({display:'none'})" %>
+                    <%=link_to_function "Close", "$('floater_wrapper').setStyle({display:'none'})" %>
+                </div>
+            </div>
+            <div id="floater_text">
+                <p>vervue is getting ready to launch. Sign up to receive news about the
+                work we are doing and learn more about how you can raise real money
+                for your favorite causes.</p>
+            </div>
+            <div id="floater_form">
+                <% remote_form_for :newsletter_subscriber, @newsletter_subscriber, :url => { :controller => "newsletter_subscribers", :action => "create" }, :update => "floater_replace" do |f| %>
+                    <%= f.hidden_field :subscriber_type, :value => "user" %>
+                    <% if !f.error_messages.nil? && f.error_messages != "" %>
+                        <script type="text/javascript">
+                            Element.setStyle('floater_with_bg','height:310px;');
+                            Element.setStyle('floater_with_bg','background: url(/images/floater/floater_bg_error.png) no-repeat;');
+                            Element.setStyle('floater_replace','padding:0px;');
+                        </script>
+                    <% end %>
+                    <%= f.error_messages %>
+                    <fieldset class="input_left">
+                        <%= f.text_field :first_name, :class => "text_field", :size => 23, :maxlength => 50, :onfocus => "this.value=''" %><br />
+                        First Name
+                    </fieldset>
+                    <fieldset class="input_right">
+                        <%= f.text_field :last_name, :class => "text_field", :size => 23, :maxlength => 50, :onfocus => "this.value=''" %><br />
+                        Last Name
+                    </fieldset>
+                    <fieldset class="input_left">
+                        <%= f.text_field :email, :class => "text_field", :size => 23, :maxlength => 100, :onfocus => "this.value=''" %><br />
+                        E-mail
+                    </fieldset>
+                    <fieldset class="input_right">
+                        <%= f.text_field :postal_code, :class => "text_field", :size => 23, :maxlength => 10, :onfocus => "this.value=''" %><br />
+                        Zip/Postal Code
+                    </fieldset>
+                    <fieldset class="input_left">
+                        <span class="h2_text">&nbsp;</span>
+                    </fieldset>
+                    <fieldset class="input_right">
+                        <%= f.submit "sign up", :class => "button" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>

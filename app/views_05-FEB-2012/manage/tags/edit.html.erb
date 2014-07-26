@@ -1,0 +1,27 @@
+<% @page_title = "manage : tags : edit" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Edit Tag</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <% form_for :tag, @tag, :url => { :action => "update" }, :html => { :method => :put } do |f| %>
+                    <%= f.error_messages %>
+                    <fieldset>
+                        <%= f.label :name, "Name: " %>
+                        <%= f.text_field :name, :class => "text_field", :size => 30, :maxlength => 50 %>
+                    </fieldset>
+                    <fieldset>
+                        <label>&nbsp;</label>
+                        <%= f.submit "Update" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Show Tag", [:manage, @tag] %>

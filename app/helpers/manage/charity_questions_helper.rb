@@ -1,0 +1,2 @@
+module Manage::CharityQuestionsHelper
+end

@@ -1,0 +1,15 @@
+user:
+  id: 1
+  name: USER
+
+admin:
+  id: 2
+  name: ADMIN
+
+sponsor:
+  id: 3
+  name: SPONSOR
+
+charity:
+  id: 4
+  name: CHARITY

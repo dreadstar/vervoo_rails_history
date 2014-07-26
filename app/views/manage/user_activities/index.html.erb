@@ -1,0 +1,35 @@
+<% @page_title = "manage : user activities : list" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">User Activities List</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="contentheading">
+        <% form_tag url_for_options = {:controller => "/manage/search", :action => "user_activities"}, :method => :get do %>
+            <%= text_field_tag "keyword", nil, :class => "text_field", :size => 30, :maxlength => 50 %><%= submit_tag "user activity search" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <% @user_activities.each_with_index do |user_activity, index| %><div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_left">User: </div>
+            <div class="list_table_cell_right"><b><%=user_activity.user.email%></b></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Activity: </div>
+            <div class="list_table_cell_right"><%=user_activity.challenge_activity.activity.name%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Actions: </div>
+            <div class="list_table_cell_right">
+                <%= link_to "Show", [:manage, user_activity] %> |
+                <%= link_to "Edit", edit_manage_user_activity_path(user_activity) %> |
+                <%= link_to "Delete", [:manage, user_activity], :confirm => "Are you sure?", :method => :delete %>
+            </div>
+        </div>
+    </div>
+    <% if index < @user_activities.length - 1 %><hr class="divider" /><% end %><% end %>
+</div><br />

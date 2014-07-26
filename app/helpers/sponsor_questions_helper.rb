@@ -1,0 +1,2 @@
+module SponsorQuestionsHelper
+end

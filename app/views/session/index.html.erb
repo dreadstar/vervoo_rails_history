@@ -1,0 +1,55 @@
+<% @page_title = "login" %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#user_email").focus();
+    });
+</script>
+
+<table class="contentpaneopen">
+    <tr>
+        <td class="contentheading" width="100%">Login</td>
+    </tr>
+</table>
+
+<table class="contentpaneopen">
+    <tr>
+        <td valign="top" width="100%">
+            <div class="notice">
+                <%= flash[:notice] %>
+            </div>
+
+            <% form_for :user, @user, :url => { :action => "login" } do |f| %>
+                <%= f.error_messages %>
+
+                <fieldset>
+                    <%= f.label :email, "E-mail: " %>
+                    <%= f.text_field :email, :class => "text_field", :size => 30, :maxlength => 100 %>
+                </fieldset>
+
+                <fieldset>
+                    <%= f.label :password, "Password: " %>
+                    <%= f.password_field :password, :class => "text_field", :size => 30, :maxlength => 50 %>
+                </fieldset>
+
+                <% if !session[:return_to].nil? %>
+                    <input type="hidden" name="referer" value="<%=session[:return_to]%>" />
+                <% elsif !request.referer.nil? %>
+                    <input type="hidden" name="referer" value="<%=request.referer%>" />
+                <% end %>
+
+                <fieldset>
+                    <label/>
+                    <%= f.submit "Login" %>
+                </fieldset>
+
+            <% end %>
+            <br /><br />
+
+            <div class="notice">
+                <%= link_to "Forgot your password?", { :controller => "session", :action => "forgot_password" } %>
+            </div>
+
+        </td>
+    </tr>
+</table><br />

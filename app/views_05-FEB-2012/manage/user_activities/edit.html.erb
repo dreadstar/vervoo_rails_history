@@ -1,0 +1,49 @@
+<% @page_title = "manage : user activities : edit" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Edit User Activities</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <% form_for :user_activity, @user_activity, :url => { :action => "update" }, :html => { :method => :put } do |f| %>
+                    <%= f.error_messages %>
+                    <fieldset>
+                        <%= f.label :user_id, "User: " %>
+                        <%= f.collection_select :user_id, @users, :id, :email, options ={:prompt => "-Select a User"}, html_options ={:class =>"select_field"} %>
+                    </fieldset>
+                    <fieldset>
+                        <%= f.label :challenge_activity_id, "Challenge Activity: " %>
+                        <%= f.collection_select :challenge_activity_id, @challenge_activities, :id, :activity_name, options ={:prompt => "-Select a Challenge Activity"}, html_options ={:class =>"select_field"} %>
+                    </fieldset>
+                    <% f.fields_for :activity_data do |ad| %>
+                        <fieldset>
+                            <%= ad.label :thing1, "Thing 1: " %>
+                            <%= ad.text_field :thing1, :class => "text_field", :size => 30, :maxlength => 50, :value => (!@user_activity.activity_data.nil? ? @user_activity.activity_data["thing1"] : "") %>
+                        </fieldset>
+                        <fieldset>
+                            <%= ad.label :thing2, "Thing 2: " %>
+                            <%= ad.text_field :thing2, :class => "text_field", :size => 30, :maxlength => 50, :value => (!@user_activity.activity_data.nil? ? @user_activity.activity_data["thing2"] : "") %>
+                        </fieldset>
+                        <fieldset>
+                            <%= ad.label :thing3, "Thing 3: " %>
+                            <%= ad.text_field :thing3, :class => "text_field", :size => 30, :maxlength => 50, :value => (!@user_activity.activity_data.nil? ? @user_activity.activity_data["thing3"] : "") %>
+                        </fieldset>
+                        <fieldset>
+                            <%= ad.label :ding7, "Ding 7: " %>
+                            <%= ad.text_field :ding7, :class => "text_field", :size => 30, :maxlength => 50, :value => (!@user_activity.activity_data.nil? ? @user_activity.activity_data["ding7"] : "") %>
+                        </fieldset>
+                    <% end %>
+                    <fieldset>
+                        <label>&nbsp;</label>
+                        <%= f.submit "Update" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Show User Activity", [:manage, @user_activity] %>

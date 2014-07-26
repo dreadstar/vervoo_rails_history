@@ -1,0 +1,114 @@
+<% @page_title = "manage : sponsors : show : #{@sponsor.name}" %>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Show Sponsor</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <div>
+          <div class="list_label">Name:</div>
+          <div class="list_text"><%= @sponsor.name %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">E-mail:</div>
+          <div class="list_text"><%= @sponsor.email %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Address 1:</div>
+          <div class="list_text"><%= @sponsor.address1 %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Address 2:</div>
+          <div class="list_text"><%= @sponsor.address2 %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">City:</div>
+          <div class="list_text"><%= @sponsor.city %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">State:</div>
+          <div class="list_text"><%= @sponsor.state %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Zip:</div>
+          <div class="list_text"><%= @sponsor.postal_code %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Country:</div>
+          <div class="list_text"><%= @sponsor.country %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Phone Number:</div>
+          <div class="list_text"><%= @sponsor.phone_number %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Image URL:</div>
+          <div class="list_text"><img src="<%= @sponsor.image_url %>"/></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Thumbnail URL:</div>
+          <div class="list_text"><img src="<%= @sponsor.img_thumb_url %>"/></div>
+        </div>
+        <% if @sponsor.img_thumb_url.nil? %>
+            <br/>
+        <% else %>
+            <br/><br/><br/><br/><br/>
+        <% end %>
+
+        <div>
+          <div class="list_label">Website:</div>
+          <div class="list_text"><%= @sponsor.website %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Tags:</div>
+          <div class="list_text">
+            <% @sponsor.tags.each_with_index do |tag, index| %>
+                <%= tag.name %><%= if index < @sponsor.tags.length - 1 then
+                                       ", "
+                                   end %>
+            <% end %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Created By:</div>
+          <div class="list_text"><%= @sponsor.user.email %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Active:</div>
+          <div class="list_text"><%= @sponsor.enabled ? "yes" : "no" %></div>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<%= link_to "Edit", :controller => "sponsors", :action => "edit", :id => @sponsor.id %>

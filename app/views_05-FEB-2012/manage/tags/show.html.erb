@@ -1,0 +1,20 @@
+<% @page_title = "manage : tags : show" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Show Tag</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <div>
+                    <div class="list_label">Name: </div>
+                    <div class="list_text"><%= @tag.name %></div>
+                </div><br />
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Edit Tag", edit_manage_tag_path(@tag) %>

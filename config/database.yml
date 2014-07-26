@@ -1,0 +1,23 @@
+development:
+  host: 127.0.0.1
+  adapter: mysql2
+  encoding: utf8
+  database: omicronp_jo151
+  username: 
+  password: 
+
+test:
+  database: vervue_test
+  host: 127.0.0.1
+  adapter: mysql2
+  encoding: utf8
+  username: 
+  password: 
+
+production:
+  host: localhost
+  adapter: mysql2
+  encoding: utf8
+  database: 
+  username: 
+  password: 

@@ -1,0 +1,390 @@
+Alaska:
+  id: 1
+  name: Alaska
+  abbrev: AK
+  usual: 1
+
+Alabama:
+  id: 2
+  name: Alabama
+  abbrev: AL
+  usual: 1
+
+American Samoa:
+  id: 3
+  name: American Samoa
+  abbrev: AS
+  usual: 0
+
+Arizona:
+  id: 4
+  name: Arizona
+  abbrev: AZ
+  usual: 1
+
+Arkansas:
+  id: 5
+  name: Arkansas
+  abbrev: AR
+  usual: 1
+
+California:
+  id: 6
+  name: California
+  abbrev: CA
+  usual: 1
+
+Colorado:
+  id: 7
+  name: Colorado
+  abbrev: CO
+  usual: 1
+
+Connecticut:
+  id: 8
+  name: Connecticut
+  abbrev: CT
+  usual: 1
+
+Delaware:
+  id: 9
+  name: Delaware
+  abbrev: DE
+  usual: 1
+
+District of Columbia:
+  id: 10
+  name: District of Columbia
+  abbrev: DC
+  usual: 1
+
+Federated States of Micronesia:
+  id: 11
+  name: Federated States of Micronesia
+  abbrev: FM
+  usual: 0
+
+Florida:
+  id: 12
+  name: Florida
+  abbrev: FL
+  usual: 1
+
+Georgia:
+  id: 13
+  name: Georgia
+  abbrev: GA
+  usual: 1
+
+Guam:
+  id: 14
+  name: Guam
+  abbrev: GU
+  usual: 0
+
+Hawaii:
+  id: 15
+  name: Hawaii
+  abbrev: HI
+  usual: 1
+
+Idaho:
+  id: 16
+  name: Idaho
+  abbrev: ID
+  usual: 1
+
+Illinois:
+  id: 17
+  name: Illinois
+  abbrev: IL
+  usual: 1
+
+Indiana:
+  id: 18
+  name: Indiana
+  abbrev: IN
+  usual: 1
+
+Iowa:
+  id: 19
+  name: Iowa
+  abbrev: IA
+  usual: 1
+
+Kansas:
+  id: 20
+  name: Kansas
+  abbrev: KS
+  usual: 1
+
+Kentucky:
+  id: 21
+  name: Kentucky
+  abbrev: KY
+  usual: 1
+
+Louisiana:
+  id: 22
+  name: Louisiana
+  abbrev: LA
+  usual: 1
+
+Maine:
+  id: 23
+  name: Maine
+  abbrev: ME
+  usual: 1
+
+Marshall Islands:
+  id: 24
+  name: Marshall Islands
+  abbrev: MH
+  usual: 0
+
+Maryland:
+  id: 25
+  name: Maryland
+  abbrev: MD
+  usual: 1
+
+Massachusetts:
+  id: 26
+  name: Massachusetts
+  abbrev: MA
+  usual: 1
+
+Michigan:
+  id: 27
+  name: Michigan
+  abbrev: MI
+  usual: 1
+
+Minnesota:
+  id: 28
+  name: Minnesota
+  abbrev: MN
+  usual: 1
+
+Mississippi:
+  id: 29
+  name: Mississippi
+  abbrev: MS
+  usual: 1
+
+Missouri:
+  id: 30
+  name: Missouri
+  abbrev: MO
+  usual: 1
+
+Montana:
+  id: 31
+  name: Montana
+  abbrev: MT
+  usual: 1
+
+Nebraska:
+  id: 32
+  name: Nebraska
+  abbrev: NE
+  usual: 1
+
+Nevada:
+  id: 33
+  name: Nevada
+  abbrev: NV
+  usual: 1
+
+New Hampshire:
+  id: 34
+  name: New Hampshire
+  abbrev: NH
+  usual: 1
+
+New Jersey:
+  id: 35
+  name: New Jersey
+  abbrev: NJ
+  usual: 1
+
+New Mexico:
+  id: 36
+  name: New Mexico
+  abbrev: NM
+  usual: 1
+
+New York:
+  id: 37
+  name: New York
+  abbrev: NY
+  usual: 1
+
+North Carolina:
+  id: 38
+  name: North Carolina
+  abbrev: NC
+  usual: 1
+
+North Dakota:
+  id: 39
+  name: North Dakota
+  abbrev: ND
+  usual: 1
+
+Northern Mariana Islands:
+  id: 40
+  name: Northern Mariana Islands
+  abbrev: MP
+  usual: 0
+
+Ohio:
+  id: 41
+  name: Ohio
+  abbrev: OH
+  usual: 1
+
+Oklahoma:
+  id: 42
+  name: Oklahoma
+  abbrev: OK
+  usual: 1
+
+Oregon:
+  id: 43
+  name: Oregon
+  abbrev: OR
+  usual: 1
+
+Palau:
+  id: 44
+  name: Palau
+  abbrev: PW
+  usual: 0
+
+Pennsylvania:
+  id: 45
+  name: Pennsylvania
+  abbrev: PA
+  usual: 1
+
+Puerto Rico:
+  id: 46
+  name: Puerto Rico
+  abbrev: PR
+  usual: 0
+
+Rhode Island:
+  id: 47
+  name: Rhode Island
+  abbrev: RI
+  usual: 1
+
+South Carolina:
+  id: 48
+  name: South Carolina
+  abbrev: SC
+  usual: 1
+
+South Dakota:
+  id: 49
+  name: South Dakota
+  abbrev: SD
+  usual: 1
+
+Tennessee:
+  id: 50
+  name: Tennessee
+  abbrev: TN
+  usual: 1
+
+Texas:
+  id: 51
+  name: Texas
+  abbrev: TX
+  usual: 1
+
+Utah:
+  id: 52
+  name: Utah
+  abbrev: UT
+  usual: 1
+
+Vermont:
+  id: 53
+  name: Vermont
+  abbrev: VT
+  usual: 1
+
+Virgin Islands:
+  id: 54
+  name: Virgin Islands
+  abbrev: VI
+  usual: 0
+
+Virginia:
+  id: 55
+  name: Virginia
+  abbrev: VA
+  usual: 1
+
+Washington:
+  id: 56
+  name: Washington
+  abbrev: WA
+  usual: 1
+
+West Virginia:
+  id: 57
+  name: West Virginia
+  abbrev: WV
+  usual: 1
+
+Wisconsin:
+  id: 58
+  name: Wisconsin
+  abbrev: WI
+  usual: 1
+
+Wyoming:
+  id: 59
+  name: Wyoming
+  abbrev: WY
+  usual: 1
+
+Armed Forces Africa:
+  id: 60
+  name: Armed Forces Africa
+  abbrev: AE
+  usual: 0
+
+Armed Forces Americas (except Canada):
+  id: 61
+  name: Armed Forces Americas (except Canada)
+  abbrev: AA
+  usual: 0
+
+Armed Forces Canada:
+  id: 62
+  name: Armed Forces Canada
+  abbrev: AE
+  usual: 0
+
+Armed Forces Europe:
+  id: 63
+  name: Armed Forces Europe
+  abbrev: AE
+  usual: 0
+
+Armed Forces Middle East:
+  id: 64
+  name: Armed Forces Middle East
+  abbrev: AE
+  usual: 0
+
+Armed Forces Pacific:
+  id: 65
+  name: Armed Forces Pacific
+  abbrev: AP
+  usual: 0
+

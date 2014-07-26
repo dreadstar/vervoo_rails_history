@@ -1,0 +1,75 @@
+<% @page_title = "Admin : Charities : Show" %>
+
+<table class="contentpaneopen">
+    <tr>
+        <td class="contentheading" width="100%">Show Charity</td>
+    </tr>
+</table>
+
+<table class="contentpaneopen">
+    <tr>
+        <td valign="top" width="100%">
+            <fieldset> 
+                <label for="charity_<%= @charity.name %>"><%= @charity.name.capitalize %>: </label>
+                <%= @charity.name %> 
+            </fieldset>
+            <fieldset>
+                <%= f.label :email, "E-mail: " %>
+                <%= charity.email %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :address1, "Address 1: " %>
+                <%= charity.address1 %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :address2, "Address 2: " %>
+                <%= charity.address2 %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :city, "City: " %>
+                <%= charity.city %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :state, "State: " %>
+                <%= charity.state %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :postal_code, "Zip Code: " %>
+                <%= charity.postal_code %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :country, "Country: " %>
+                <%= charity.country %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :phone_number, "Phone Number: " %>
+                <%= charity.phone_number %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :image_url, "Image URL: " %>
+                <%= charity.image_url %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :website, "Website URL: " %>
+                <%= charity.website %>
+            </fieldset>
+
+            <fieldset>
+                <%= f.label :enabled, "Enabled: " %>
+                <%= charity.enabled %>
+            </fieldset>
+        </td>
+    </tr>
+</table><br />
+
+<%= link_to 'Edit', edit_charity_question_path(@charity_question) %> |
+<%= link_to 'Back', charity_questions_path %>

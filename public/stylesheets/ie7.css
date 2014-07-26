@@ -1,0 +1,9 @@
+#menu {
+	top:3px; 
+}
+#content {
+    top: -3px;
+}
+#footer {
+    top: -6px;
+}

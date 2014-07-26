@@ -1,0 +1,35 @@
+<% @page_title = "manage : charity questions : edit" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Edit Charity Question</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <% form_for :charity_question, @charity_question, :url => { :action => "update" }, :html => { :method => :put } do |f| %>
+                    <%= f.error_messages %>
+                    <fieldset>
+                        <%= f.label :question, "Question: " %>
+                        <%= f.text_field :question, :class => "text_field", :size => 30, :maxlength => 50 %>
+                    </fieldset>
+                    <fieldset>
+                        <%= f.label :question_type, "Question Type: " %>
+                        <%= f.collection_select :question_type, @question_types, :abbrev, :name, options ={:prompt => "-Select a Question Type"}, :class =>"select_field" %>
+                    </fieldset>
+                    <fieldset>
+                        <%= f.label :active, "Active: " %>
+                        <%= f.check_box :active %>
+                    </fieldset>
+                    <fieldset>
+                        <label>&nbsp;</label>
+                        <%= f.submit "Update" %>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Show Charity Question", @charity_question %>

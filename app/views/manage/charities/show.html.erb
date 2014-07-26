@@ -1,0 +1,128 @@
+<% @page_title = "manage : charities : show : #{@charity.name}" %>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Show Charity</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <div>
+          <div class="list_label">Name:</div>
+          <div class="list_text"><%= @charity.name %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">E-mail:</div>
+          <div class="list_text"><%= @charity.email %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Address 1:</div>
+          <div class="list_text"><%= @charity.address1 %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Address 2:</div>
+          <div class="list_text"><%= @charity.address2 %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">City:</div>
+          <div class="list_text"><%= @charity.city %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">State:</div>
+          <div class="list_text"><%= @charity.state %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Zip:</div>
+          <div class="list_text"><%= @charity.postal_code %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Country:</div>
+          <div class="list_text"><%= @charity.country %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Phone Number:</div>
+          <div class="list_text"><%= @charity.phone_number %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Image URL:</div>
+          <% if @charity.image_url.nil? %>
+              "No image"
+          <% else %>
+              <div class="list_text"><img src="<%= @charity.image_url %>"/></div>
+              <br/>
+          <% end %>
+        </div>
+
+        <div>
+          <div class="list_label">Thumbnail URL:</div>
+          <% if @charity.img_thumb_url.nil? %>
+              "No image"
+          <% else %>
+              <div class="list_text"><img src="<%= @charity.img_thumb_url %>"/></div>
+
+              <br/><br/><br/><br/><br/>
+          <% end %>
+
+        </div>
+        <div>
+          <div class="list_label">Website:</div>
+          <div class="list_text">
+            <% if @charity.website.nil? or @charity.website.strip.nil? %>
+                None provided
+            <% else %>
+                <%= @charity.website %>
+            <% end %>
+          </div>
+          <br/>
+        </div>
+        <br/>
+        <br/>
+
+        <div>
+          <div class="list_label">Tags:</div>
+          <div class="list_text">
+            <% @charity.tags.each_with_index do |tag, index| %>
+                <%= tag.name %><%= if index < @charity.tags.length - 1 then
+                                     ", "
+                                   end %>
+            <% end %></div>
+          <br/>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Created By:</div>
+          <div class="list_text"><%= @charity.user.email %></div>
+        </div>
+        <br/>
+
+        <div>
+          <div class="list_label">Active:</div>
+          <div class="list_text"><%= @charity.enabled ? "yes" : "no" %></div>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<%= link_to "Edit Charity", :controller => "charities", :action => "edit", :id => @charity.id %>

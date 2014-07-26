@@ -1,0 +1,20 @@
+
+        <div id="floater_replace">
+            <div>
+                <div id="floater_header">
+                    <span class="h1_text">Thanks!</span>
+                </div>
+                <div id="floater_close">
+                    <%=link_to_function image_tag("http://images.vervoo.com/images/icons/rounded_x.png", :id => "close_button", :alt => "Close"), "$('floater_wrapper').setStyle({display:'none'})" %>
+                    <%=link_to_function "Close", "$('floater_wrapper').setStyle({display:'none'})" %>
+                </div>
+            </div>
+            <div id="floater_text">
+                <p>Thank you for your interest in vervue.  We willll keep you updated.</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            Element.setStyle('floater_with_bg','height:110px;');
+            Element.setStyle('floater_with_bg','background: url(/images/floater/floater_bg_thanks.png) no-repeat;');
+            Element.setStyle('floater_replace','padding:0px;');
+        </script>

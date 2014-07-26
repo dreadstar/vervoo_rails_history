@@ -1,0 +1,62 @@
+<% @page_title = "manage : activities : list" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Activities List</div>
+    <div>
+        Sorting: 
+        <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "asc" then %>
+            A-Z |
+        <% else %>
+            <%= link_to "A-Z", :controller => "activities", :action => "index", :sort => "alpha", :asc => "asc" %> |
+        <% end %>
+        <% if !params[:sort].nil? && params[:sort] == "alpha" && !params[:asc].nil? && params[:asc] == "desc" then %>
+            Z-A |
+        <% else %>
+            <%= link_to "Z-A", :controller => "activities", :action => "index", :sort => "alpha", :asc => "desc" %> |
+        <% end %>
+        <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "asc" then %>
+            New |
+        <% else %>
+            <%= link_to "New", :controller => "activities", :action => "index", :sort => "date", :asc => "asc" %> |
+        <% end %>
+        <% if !params[:sort].nil? && params[:sort] == "date" && !params[:asc].nil? && params[:asc] == "desc" then %>
+            Old
+        <% else %>
+            <%= link_to "Old", :controller => "activities", :action => "index", :sort => "date", :asc => "desc" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="contentheading">
+        <% form_tag url_for_options = {:controller => "/manage/search", :action => "activities"}, :method => :get do %>
+            <%= text_field_tag "keyword", nil, :class => "text_field", :size => 30, :maxlength => 50 %><%= submit_tag "activity search" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <% @activities.each_with_index do |activity, index| %><div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Name: </div>
+            <div class="list_table_cell_right"><b><%=activity.name%></b></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Description: </div>
+            <div class="list_table_cell_right"><%=activity.description%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Active: </div>
+            <div class="list_table_cell_right"><%=activity.enabled ? "yes" : "no" %></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Actions: </div>
+            <div class="list_table_cell_right">
+                <%= link_to "Show", [:manage, activity] %> |
+                <%= link_to "Edit", edit_manage_activity_path(activity) %> |
+                <%= link_to "Delete", [:manage, activity], :confirm => "Are you sure?", :method => :delete %>
+            </div>
+        </div>
+    </div>
+    <% if index < @activities.length - 1 %><hr class="divider" /><% end %><% end %>
+</div><br />

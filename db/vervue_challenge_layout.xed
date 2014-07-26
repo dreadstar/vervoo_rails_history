@@ -1,0 +1,231 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram version="1.0" type="MySQL" versionMajor="5" versionMinor="0" groupSchema="false">
+   <Table id="0" name="challenges" schema="" database="">
+      <Column id="1" name="challenge_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="2" name="name" type="varchar" length="25" nulls="true"/>
+      <Column id="3" name="description" type="varchar" length="1000" nulls="true"/>
+      <Column id="4" name="start_date" type="datetime" length="25" nulls="true"/>
+      <Column id="5" name="end_date" type="datetime" length="25" nulls="false"/>
+      <Column id="6" name="grant_amout" type="decimal" length="25" nulls="true">
+         <CP name="PRECISION">10</CP>
+         <CP name="SCALE">2</CP>
+      </Column>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="7" name="charities" schema="" database="">
+      <Column id="8" name="charity_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="9" name="name" type="varchar" length="25" nulls="true"/>
+      <Column id="10" name="description" type="varchar" length="25" nulls="true"/>
+      <Column id="11" name="logo_url" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="12" name="sponsors" schema="" database="">
+      <Column id="13" name="sponsor_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="14" name="name" type="varchar" length="25" nulls="true"/>
+      <Column id="15" name="description" type="varchar" length="25" nulls="true"/>
+      <Column id="16" name="logo_url" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="17" name="challenge_charities" schema="" database="">
+      <Column id="18" name="challenge_charity_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="19" name="challenge_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="20" name="charity_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="21" name="challenge_sponsors" schema="" database="">
+      <Column id="22" name="challenge_sponsor_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="23" name="challenge_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="24" name="sponsor_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="25" name="actions" schema="" database="">
+      <Column id="26" name="action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="27" name="name" type="varchar" length="25" nulls="true"/>
+      <Column id="28" name="description" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="29" name="challenge_actions" schema="" database="">
+      <Column id="30" name="challenge_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="31" name="challenge_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="32" name="action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="33" name="action_value" type="varchar" length="25" nulls="true"/>
+      <Column id="34" name="action_tracker_table" type="varchar" length="25" nulls="true"/>
+      <Column id="35" name="action_tracker_class" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="36" name="action_tracker_1" schema="" database="">
+      <Column id="37" name="action_tracker_1_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="38" name="challenge_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="39" name="user_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="40" name="challenge_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="41" name="action_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="42" name="thing_1" type="varchar" length="25" nulls="true"/>
+      <Column id="43" name="thing_2" type="varchar" length="25" nulls="true"/>
+      <Column id="44" name="thing_n" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="45" name="action_tracker_2" schema="" database="">
+      <Column id="46" name="action_tracker_2_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="47" name="challenge_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="48" name="user_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="49" name="challenge_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="50" name="action_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="51" name="thing_1" type="varchar" length="25" nulls="true"/>
+      <Column id="52" name="thing_2" type="varchar" length="25" nulls="true"/>
+      <Column id="53" name="thing_n" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="54" name="action_tracker_n" schema="" database="">
+      <Column id="55" name="action_tracker_n_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="56" name="challenge_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="57" name="user_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="58" name="challenge_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="59" name="action_id" type="int" length="25" nulls="true">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="60" name="thing_1" type="varchar" length="25" nulls="true"/>
+      <Column id="61" name="thing_2" type="varchar" length="25" nulls="true"/>
+      <Column id="62" name="thing_n" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Table id="63" name="user_actions" schema="" database="">
+      <Column id="64" name="user_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="65" name="user_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="66" name="challenge_action_id" type="int" length="25" nulls="false">
+         <CP name="PRECISION">15</CP>
+      </Column>
+      <Column id="67" name="action_tracker_table" type="varchar" length="25" nulls="true"/>
+      <Column id="68" name="action_tracker_class" type="varchar" length="25" nulls="true"/>
+      <Storage name="Charset" value=""></Storage>
+      <Storage name="Collation" value=""></Storage>
+      <Storage name="Engine" value=""></Storage>
+   </Table>
+   <Relation id="69" name="fk_charities_challenge_charities" cardinality="-2" identifying="true" nulls="false">
+      <FK>8</FK>
+      <PK>20</PK>
+      <Text></Text>
+   </Relation>
+   <Relation id="70" name="fk_sponsors_challenge_sponsors" cardinality="-2" identifying="true" nulls="false">
+      <FK>13</FK>
+      <PK>24</PK>
+      <Text></Text>
+   </Relation>
+   <Relation id="71" name="fk_challenges_challenge_sponsors" cardinality="-2" identifying="true" nulls="false">
+      <FK>1</FK>
+      <PK>23</PK>
+      <Text></Text>
+   </Relation>
+   <Relation id="72" name="fk_challenges_challenge_charities" cardinality="-2" identifying="true" nulls="false">
+      <FK>1</FK>
+      <PK>19</PK>
+      <Text></Text>
+   </Relation>
+   <Relation id="73" name="fk_actions_challenge_actions" cardinality="-2" identifying="true" nulls="false">
+      <FK>26</FK>
+      <PK>32</PK>
+      <Text></Text>
+   </Relation>
+   <Relation id="74" name="fk_challenges_challenge_actions" cardinality="-2" identifying="true" nulls="false">
+      <FK>1</FK>
+      <PK>31</PK>
+      <Text></Text>
+   </Relation>
+   <Sheet name="Untitled 1" id="75" disp_at="true" disp_ph="true" disp_co="true" disp_rn="true">
+      <Place id="54" visible="true">620,540,221,161</Place>
+      <Place id="12" visible="true">850,30,191,101</Place>
+      <Place id="74" visible="true" options="430.0,80.0,211.0,131.0,440.0,360.0,251.0,131.0,2,540.0,211.0,540.0,360.0">651,-4,0,0</Place>
+      <Place id="45" visible="true">340,540,221,161</Place>
+      <Place id="7" visible="true">80,20,191,101</Place>
+      <Place id="70" visible="true" options="850.0,30.0,191.0,101.0,810.0,220.0,231.0,81.0,2,980.0,131.0,980.0,220.0">500,0,0,0</Place>
+      <Place id="71" visible="true" options="430.0,80.0,211.0,131.0,810.0,220.0,231.0,81.0,4,641.0,180.0,690.0,180.0,690.0,280.0,810.0,280.0">500,0,0,0</Place>
+      <Place id="25" visible="true">40,360,191,81</Place>
+      <Place id="0" visible="true">430,80,211,131</Place>
+      <Place id="72" visible="true" options="430.0,80.0,211.0,131.0,60.0,210.0,221.0,81.0,4,430.0,180.0,390.0,180.0,390.0,280.0,281.0,280.0">500,0,0,0</Place>
+      <Place id="63" visible="true">830,360,251,111</Place>
+      <Place id="21" visible="true">810,220,231,81</Place>
+      <Place id="73" visible="true" options="40.0,360.0,191.0,81.0,440.0,360.0,251.0,131.0,4,231.0,380.0,340.0,380.0,340.0,420.0,440.0,420.0">500,0,0,0</Place>
+      <Place id="17" visible="true">60,210,221,81</Place>
+      <Place id="36" visible="true">70,540,221,161</Place>
+      <Place id="29" visible="true">440,360,251,131</Place>
+      <Place id="69" visible="true" options="80.0,20.0,191.0,101.0,60.0,210.0,221.0,81.0,4,190.0,121.0,190.0,170.0,190.0,170.0,190.0,210.0">500,0,0,0</Place>
+   </Sheet>
+   <Settings sheet="75" zoom="1.0"></Settings>
+</Diagram>

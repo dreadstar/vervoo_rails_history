@@ -1,0 +1,89 @@
+<% @page_title = "manage : charities : edit : #{@charity.name}" %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        toSEOFriendly($("#charity_name"), $("#charity_seo_name"));
+        $("#edit_charity_form").submit(function() {
+            toSEOFriendly($("#charity_name"), $("#charity_seo_name"));
+        });
+    });
+</script>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Edit Charity</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <% form_for :charity, @charity, :url => {:action => "update"}, :html => {:id => "edit_charity_form", :method => :put, :multipart => true} do |f| %>
+            <%= f.error_messages %>
+            <%= f.hidden_field :seo_name %>
+            <fieldset>
+              <%= f.label :name, "Name: " %>
+              <%= f.text_field :name, :class => "text_field", :size => 30, :maxlength => 50 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :email, "E-mail: " %>
+              <%= f.text_field :email, :class => "text_field", :size => 30, :maxlength => 100 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :address1, "Address 1: " %>
+              <%= f.text_field :address1, :class => "text_field", :size => 30, :maxlength => 50 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :address2, "Address 2: " %>
+              <%= f.text_field :address2, :class => "text_field", :size => 30, :maxlength => 50 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :city, "City: " %>
+              <%= f.text_field :city, :class => "text_field", :size => 30, :maxlength => 100 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :state, "State: " %>
+              <%= f.collection_select :state, @states, :abbrev, :name, options ={:prompt => "-Select a State"}, :class =>"select_field" %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :postal_code, "Zip Code: " %>
+              <%= f.text_field :postal_code, :class => "text_field", :size => 5, :maxlength => 10 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :country, "Country: " %>
+              <%= f.collection_select :country, @countries, :iso, :printable_name, options ={:prompt => "-Select a Country"}, :class =>"select_field" %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :phone_number, "Phone Number: " %>
+              <%= f.text_field :phone_number, :class => "text_field", :size => 15, :maxlength => 15 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :image_url, "Image URL: " %>
+              <%= f.file_field :image_url, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :img_thumb_url, "Thumbnail URL: " %>
+              <%= f.file_field :img_thumb_url, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :website, "Website URL: " %>
+              <%= f.text_field :website, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :tag_ids, "Tags: " %>
+              <%= f.collection_select :tag_ids, @tags, :id, :name, options ={:prompt => "-Select Tags"}, html_options ={:multiple => true, :size => 5, :class =>"select_field"} %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :enabled, "Active: " %>
+              <%= f.check_box :enabled, {}, "true", "false" %>
+            </fieldset>
+            <fieldset>
+              <label>&nbsp;</label>
+              <%= f.submit "Update" %>
+            </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<%= link_to "Show Charity", :controller => "charities", :action => "show", :id => @charity.id %>

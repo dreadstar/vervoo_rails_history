@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    
+    <title>Log In - Web Applications</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://sstatic.net/webapps/all.css?v=1c89b7144ee7">
+    <link rel="shortcut icon" href="http://sstatic.net/webapps/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://sstatic.net/webapps/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Web Applications" href="/opensearch.xml">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://sstatic.net/js/master.1.min.js?v=4eea04a20c9c"></script>
+    <script type="text/javascript">
+    var imagePath='http://sstatic.net/webapps/img/';
+    var inboxUnviewedCount = -1;
+    
+    </script>
+    
+    <meta http-equiv="X-XRDS-Location" content="http://webapps.stackexchange.com/yadis">
+    
+
+    <link rel="stylesheet" href="http://sstatic.net/openid.css?v=3">
+    <script type="text/javascript" src="http://sstatic.net/Js/third-party/openid-jquery.js?v=7"></script>
+
+    <script type="text/javascript">
+        $().ready(function() {
+            openid.init('openid_identifier');
+        });
+    </script>
+    <style type="text/css">
+        #openid-url-input { margin-bottom:30px; margin-left:30px; }
+        .large { font-size:140%; }
+    </style>
+
+
+        <script type="text/javascript">gauth.checkStackAuth('http://stackauth.com');</script>
+        
+        <script type="text/javascript">gauth.informStackAuth('http://stackauth.com');</script>
+
+</head>
+<body class="user-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+
+    <script type="text/javascript">
+        $(function() { notify.showFirstTime('Q&amp;A for power users of web applications'); });
+    </script>
+
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                
+                <a class="genu" href="http://stackexchange.com">Stack Exchange</a>
+                
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="/users/login">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackexchange.com">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.webapps.stackexchange.com">meta</a>
+ <span class="lsep">|</span>
+<a href="/about">about</a>
+ <span class="lsep">|</span>
+<a href="/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="/">Web Applications</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li><a id="nav-questions" href="/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="/tags">Tags</a></li>
+                        <li class="youarehere"><a id="nav-users" href="/users">Users</a></li>
+                        <li><a id="nav-badges" href="/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li >
+                            <a id="nav-askquestion" href="/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div id="content">
+            
+
+<div class="subheader">
+    <h1>Log In</h1>
+</div>
+
+<div id="mainbar">
+
+        <div class="page-description">
+                        
+        <div class="form-error">
+            
+        </div>           
+        
+        <form id="openid_form" action="/users/authenticate" method="post">       
+            
+            <!-- OAuth form elements -->
+            <input type="hidden" id="oauth_version" name="oauth_version">
+            <input type="hidden" id="oauth_server"  name="oauth_server">
+
+        
+
+            <!-- Simple OpenID Selector -->
+            <div id="openid_choice">
+	            <p>Do you already have an account on one of these sites? Click the logo to 
+                
+                <b>log in</b> with it here:
+                
+	            <div id="openid_btns"></div>
+            </div>
+			
+            <div id="openid_input_area">
+            </div>
+	        
+	        <div>
+	            <noscript>
+                <p>OpenID is a service that allows you to log on to many different websites using a single identity.
+                Find out <a href="http://openid.net/what/">more about OpenID</a> and <a href="http://openid.net/get/">how to get an OpenID enabled account</a>.</p>
+                </noscript>
+            </div>
+            
+        
+                
+        <p>If you don&rsquo;t already have an account on any of the above</p>
+        <p style="margin-left:30px; margin-bottom:30px;"><b style="font-size:130%"><a href="https://www.myopenid.com/signup?affiliate_id=57444">click here to sign up</a></b></p>
+        
+        <p>If you&rsquo;ve forgotten or lost your login information</p>
+        <p style="margin-left:30px; margin-bottom:30px;"><b style="font-size:130%"><a href="/users/account-recovery">click here to recover your account</a></b></p>
+        </tr>
+               
+
+        <!-- /Simple OpenID Selector -->
+                        
+        <p>Or, you can manually enter your OpenID</p>
+        <table id="openid-url-input">
+            <tr>         
+            <td class="vt large">
+                <input id="openid_identifier" name="openid_identifier" class="openid-identifier" style="height:28px; width:500px;" type="text" tabindex="100">
+            </td>
+            <td class="vt large">
+                <input id="submit-button" style="margin-left:5px; height:36px;" type="submit" value="Log in" tabindex="101">
+            </td>
+            </tr>                                
+        </table>             
+    </form>
+
+
+    </div>        
+</div> 
+
+<div id="sidebar">
+    <div class="module newuser">
+        <h4>Why OpenID?</h4>
+        <p>It&rsquo;s a single username and password that allows you to log in to any OpenID-enabled site.</p>
+        <p>It works on thousands of websites.</p>
+        <p>It&rsquo;s an open standard.</p>
+        <p class="ar">
+        <a href="http://openid.net/what/" target="_blank">learn more &raquo;</a><br>
+        </p>
+    </div>
+        <div class="module">
+        <h4>Use your own URL</h4>
+        <p>Want to add OpenID support to <i>your</i> website?</p>
+        <p>It&rsquo;s as easy as adding two HTML header tags!</p>
+        <p class="ar">
+        <a href="http://blog.stackoverflow.com/2009/01/using-your-own-url-as-your-openid/">see how &raquo;</a>
+        </p>
+    </div>
+</div>
+
+<br class="cbt">
+   
+
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="/about">about</a> |
+                <a href="/faq">faq</a> |
+                <span title="3 hours ago" class="new-blog-post">new</span> <a href="http://blog.stackexchange.com">blog</a> |
+                <a href="http://data.stackexchange.com">data</a> |
+                <a href="http://itc.conversationsnetwork.org/series/stackoverflow.html">podcast</a> |
+                <a href="/legal">legal</a> |
+                <a href="http://stackoverflow.com/about/contact">advertising info</a> |
+                <b><a href="mailto:team@stackexchange.com">contact us</a></b>
+
+                 | <b><a href="http://meta.webapps.stackexchange.com">feedback always welcome</a></b>
+
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackoverflow.com">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://stackapps.com">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">&#9632;</span>&nbsp;<a href="http://careers.stackoverflow.com">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">&#9632;</span>&nbsp;<a href="http://serverfault.com">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">&#9632;</span>&nbsp;<a href="http://superuser.com">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">&#9632;</span>&nbsp;<a href="http://meta.stackoverflow.com">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">&#9632;</span>&nbsp;<a href="http://area51.stackexchange.com">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">&#9632;</span>&nbsp;<a href="http://webapps.stackexchange.com">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">&#9632;</span>&nbsp;<a href="http://gaming.stackexchange.com">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">&#9632;</span>&nbsp;<a href="http://askubuntu.com">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">&#9632;</span>&nbsp;<a href="http://webmasters.stackexchange.com">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">&#9632;</span>&nbsp;<a href="http://cooking.stackexchange.com">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">&#9632;</span>&nbsp;<a href="http://gamedev.stackexchange.com">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">&#9632;</span>&nbsp;<a href="http://math.stackexchange.com">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">&#9632;</span>&nbsp;<a href="http://photo.stackexchange.com">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">&#9632;</span>&nbsp;<a href="http://stats.stackexchange.com">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">&#9632;</span>&nbsp;<a href="http://tex.stackexchange.com">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">&#9632;</span>&nbsp;<a href="http://english.stackexchange.com">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">&#9632;</span>&nbsp;<a href="http://cstheory.stackexchange.com">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">&#9632;</span>&nbsp;<a href="http://programmers.stackexchange.com">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">&#9632;</span>&nbsp;<a href="http://unix.stackexchange.com">unix</a>
+                </div>
+            </div>
+            <div id="footer-flair">
+	            <a href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc-wiki-link"></a>
+                <div id="svnrev">revision: 2011.1.24.3</div>                
+            
+            </div>
+            <div id="copyright">
+                site design / logo &copy; 2011 stack overflow internet services, inc; 
+                <a href="/questions-all">user contributions</a> licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Web Applications works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>    
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-24']);_gaq.push(['_setDomainName','.stackexchange.com']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+
+</body>
+</html>

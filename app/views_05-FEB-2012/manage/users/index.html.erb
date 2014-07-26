@@ -1,0 +1,51 @@
+<% @page_title = "manage : users : list" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Users List</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="contentheading">
+        <% form_tag url_for_options = {:controller => "/manage/search", :action => "users"}, :method => :get do %>
+            <%= text_field_tag "keyword", nil, :class => "text_field", :size => 30, :maxlength => 50 %><%= submit_tag "user search" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="contentpaneopen">
+    <% if !@users.nil? then @users.each_with_index do |user, index| %><div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_left">E-mail: </div>
+            <div class="list_table_cell_right"><b><%=user.email%></b></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">First Name: </div>
+            <div class="list_table_cell_right"><%=user.first_name%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Last Name: </div>
+            <div class="list_table_cell_right"><%=user.last_name%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">City: </div>
+            <div class="list_table_cell_right"><%=user.city%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">State: </div>
+            <div class="list_table_cell_right"><%=user.state%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Zip: </div>
+            <div class="list_table_cell_right"><%=user.postal_code%></div>
+        </div>
+        <div class="list_table_row">
+            <div class="list_table_cell_left">Actions: </div>
+            <div class="list_table_cell_right">
+                <%= link_to "Show", [:manage, user] %> |
+                <%= link_to "Edit", edit_manage_user_path(user) %> |
+                <%= link_to "Delete", [:manage, user], :confirm => "Are you sure?", :method => :delete %>
+            </div>
+        </div>
+    </div>
+    <% if index < @users.length - 1 %><hr class="divider" /><% end %><% end end %>
+</div><br />

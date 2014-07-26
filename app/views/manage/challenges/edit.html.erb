@@ -1,0 +1,105 @@
+<% @page_title = "manage : challenges : edit : #{@challenge.name}" %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        toSEOFriendly($("#challenge_name"), $("#challenge_seo_name"));
+        $("#edit_challenge_form").submit(function() {
+            toSEOFriendly($("#challenge_name"), $("#challenge_seo_name"));
+        });
+    });
+</script>
+
+<div class="contentpaneopen">
+  <div class="contentheading">Edit Challenge</div>
+</div>
+
+<div class="contentpaneopen">
+  <div class="list_table">
+    <div class="list_table_row">
+      <div class="list_table_cell_single">
+        <% form_for :challenge, @challenge, :url => {:action => "update"}, :html => {:id => "edit_challenge_form", :method => :put, :multipart => true} do |f| %>
+            <%= f.error_messages %>
+            <%= f.hidden_field :seo_name %>
+            <fieldset>
+              <%= f.label :name, "Name: " %>
+              <%= f.text_field :name, :class => "text_field", :size => 30, :maxlength => 50 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :description, "Description: " %>
+              <%= f.text_field :description, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :start_date, "Start Date: " %>
+              <%= f.text_field :start_date, :class => "text_field", :size => 10, :maxlength => 10 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :end_date, "End Date: " %>
+              <%= f.text_field :end_date, :class => "text_field", :size => 10, :maxlength => 10 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :total_offer, "Total Offer: " %>
+              <%= f.text_field :total_offer, :class => "text_field", :size => 6, :maxlength => 12 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :amount_raised, "Amount Raised: " %>
+              <%= f.text_field :amount_raised, :class => "text_field", :size => 6, :maxlength => 12 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :sponsor_blurb, "Sponsor Blurb: " %>
+              <%= f.text_field :sponsor_blurb, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :charity_blurb, "Charity Blurb: " %>
+              <%= f.text_field :charity_blurb, :class => "text_field", :size => 30, :maxlength => 255 %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :challenge_img, "Challenge Image URL: " %>
+                  <%= f.file_field :challenge_img, :class => "text_field", :size => 30, :maxlength => 255 %>
+              <% if (@challenge.challenge_img.nil?) %>
+                  "No image"
+              <% else %>
+                   Current --
+                  <%= File.basename(@challenge.challenge_img) %>
+              <% end %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :img_thumb_url, "Thumbnail  URL: " %>
+                  <%= f.file_field :img_thumb_url, :class => "text_field", :size => 30, :maxlength => 255 %>
+              <% if (@challenge.img_thumb_url.nil?) %>
+                  "No image"
+              <% else %>
+                   Current --
+                  <%= File.basename(@challenge.img_thumb_url) %>
+              <% end %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :charity_ids, "Charities: " %>
+              <%= f.collection_select :charity_ids, @charities, :id, :name, options ={:prompt => "-Select a Charity"}, html_options ={:multiple => true, :size => 5, :class =>"select_field"} %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :sponsor_ids, "Sponsors: " %>
+              <%= f.collection_select :sponsor_ids, @sponsors, :id, :name, options ={:prompt => "-Select a Sponsor"}, html_options ={:multiple => true, :size => 5, :class =>"select_field"} %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :activity_ids, "Activities: " %>
+              <%= f.collection_select :activity_ids, @activities, :id, :name, options ={:prompt => "-Select an Activity"}, html_options ={:multiple => true, :size => 5, :class =>"select_field"} %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :tag_ids, "Tags: " %>
+              <%= f.collection_select :tag_ids, @tags, :id, :name, options ={:prompt => "-Select Tags"}, html_options ={:multiple => true, :size => 5, :class =>"select_field"} %>
+            </fieldset>
+            <fieldset>
+              <%= f.label :enabled, "Active: " %>
+              <%= f.check_box :enabled %>
+            </fieldset>
+            <fieldset>
+              <label>&nbsp;</label>
+              <%= f.submit "Update" %>
+            </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><br/>
+
+<%= link_to "Show Challenge", :controller => "challenges", :action => "show", :id => @challenge.id %> |

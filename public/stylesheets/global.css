@@ -1,0 +1,252 @@
+/*html Reset*/ * {
+    margin: 0;
+    padding: 0;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+ul {
+    list-style: circle;
+    list-style-position: inside;
+}
+
+a:focus {
+    outline: none;
+}
+
+html {
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+/* links */
+a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*End of html Reset*/
+body {
+    font: 14px / 150% Arial, Helvetica, sans-serif;
+    color: #646464;
+    background: #FFFFFF url(http://images.vervue.com/images/joomla/background_grn_wht.jpg) repeat-x;
+    position: relative;
+}
+
+a:link, a:visited {
+    color: #339900;
+}
+
+a:hover {
+    color: #f00;
+}
+
+#wrap {
+    padding: 0;
+    width: 960px !important; /*IE6 hack*/
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#header {
+    float: left;
+    color: #fff;
+    width: 100%;
+    height: 100px;
+    background: #7b7f8a url(http://images.vervue.com/images/joomla/header-bg.gif) repeat-x;
+    position: relative;
+}
+
+a#logo {
+    float: left;
+    width: 347px;
+    height: 100px;
+    background: url(http://images.vervue.com/images/joomla/logo.jpg) no-repeat 0 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: #000000;
+    width: 75%;
+    margin-left: 10px;
+}
+
+/*Top Navigation*/
+#top-menu {
+    width: auto;
+    height: auto;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#top-menu ul {
+    list-style-type: none;
+    text-align: left;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#top-menu li {
+    float: left;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#top-menu a {
+    font-size: 11px;
+    text-decoration: none;
+    color: #d3d3d3;
+    margin: 0;
+    padding: 0 6px;
+}
+
+#top-menu a:hover, #top-menu li.active a {
+    color: #fff;
+}
+
+.inside {
+    padding: 0 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+#left {
+    float: left;
+    width: 20%;
+    overflow: hidden;
+    background: none;
+}
+
+#right {
+    float: right;
+    width: 20%;
+    overflow: hidden;
+    background: none;
+}
+
+#container {
+    margin: 0;
+    background: #fff;
+    width: auto;
+    height: auto;
+}
+
+#container_m {
+    border: 1px solid #ccc;
+    width: auto;
+    min-height: 400px;
+    padding: 1px 10px;
+}
+
+#content60 {
+    width: 60%;
+    overflow: hidden
+}
+
+#content80 {
+    width: 80%;
+    overflow: hidden
+}
+
+#content100 {
+    width: 100%;
+    overflow: hidden;
+}
+
+table.contentpaneopen, table.contentpane {
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+.contentpaneopen, .contentpane {
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+h2, .contentheading {
+    clear: both;
+    color: #333;
+    font: normal normal normal 25px / 25px Cambria, serif;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+fieldset {
+    padding: 5px;
+}
+
+label {
+    float: left;
+    position: relative;
+    width: 120px;
+    padding-right: 5px;
+    text-align: right;
+    font-weight:bold;
+}
+
+
+/* ################ Error ################ */
+.errorExplanation {
+    color: #FF0000;
+}
+.errorExplanation h2 {
+    font-size: 14px;
+}
+
+
+/* ################ Footer ################ */
+#footer {
+    position: relative;
+    width: 960px;
+    height: 49px;
+    text-align: center;
+    background: url(http://images.vervue.com/images/demo/footer_beta.png) repeat-x;
+    float: left;
+}
+#footer #connect {
+    position: relative;
+    top: 12px;
+    width: 300px;
+    float: left;
+    color: #FFFFFF;
+    padding-left: 20px;
+    text-align: left;
+}
+#footer #connect #c_text {
+    position: relative;
+    top: -5px;
+}
+#footer #connect #icons {
+    padding-left: 10px;
+    vertical-align: middle;
+}
+#footer #copyright {
+    position: relative;
+    top: 15px;
+    width: 200px;
+    float: right;
+    color: #FFFFFF;
+    padding-right: 20px;
+}
+

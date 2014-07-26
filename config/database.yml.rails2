@@ -1,0 +1,23 @@
+#defaults: &defaults
+#  host: 127.0.0.1
+#  adapter: mysql
+#  encoding: utf8
+#  username: 
+#  password: 
+
+development:
+  database: vervoo_dev
+  host: 127.0.0.1
+  adapter: mysql
+  username: root
+  password:
+
+
+#test:
+#  database: vervue_test
+#  <<: *defaults
+#
+#production:
+#  database: 
+#  password: 
+#  <<: *defaults

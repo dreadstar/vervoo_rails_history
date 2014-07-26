@@ -1,0 +1,36 @@
+<% @page_title = "manage : activities : show : #{@activity.name}" %>
+
+<div class="contentpaneopen">
+    <div class="contentheading">Show Activity</div>
+</div>
+
+<div class="contentpaneopen">
+    <div class="list_table">
+        <div class="list_table_row">
+            <div class="list_table_cell_single">
+                <div>
+                    <div class="list_label">Name: </div>
+                    <div class="list_text"><%= @activity.name %></div>
+                </div><br />
+                <div>
+                    <div class="list_label">Description: </div>
+                    <div class="list_text"><%= @activity.description %></div>
+                </div><br />
+                <div>
+                    <div class="list_label">Created By: </div>
+                    <div class="list_text"><%= @activity.user.email %></div>
+                </div><br />
+              <div>
+                <div class="list_label">Amount: </div>
+                <div class="list_text"><%=  @activity.amt %></div>
+              </div><br/>
+                <div>
+                    <div class="list_label">Active: </div>
+                    <div class="list_text"><%= @activity.enabled ? "yes" : "no" %></div>
+                </div><br/>
+            </div>
+        </div>
+    </div>
+</div><br />
+
+<%= link_to "Edit Activity", edit_manage_activity_path(@activity) %>
